@@ -1,4 +1,4 @@
-<h1>Hello world</h1>
+<h1>My Tasks</h1>
 <% @tasks.each do |task| %>
   <div class="form-check">
     <% if task.completed %>
@@ -6,7 +6,6 @@
     <% else %>
       <i class="far fa-square"></i>
     <% end %>
-    <%= task.title %>
+    <%= link_to task.title, task_path(task) %>
   </div>
 <% end %>
-
