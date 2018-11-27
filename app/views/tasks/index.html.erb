@@ -1,4 +1,5 @@
 <h1>My Tasks</h1>
+
 <% @tasks.each do |task| %>
   <div class="form-check">
     <% if task.completed %>
@@ -7,5 +8,17 @@
       <i class="far fa-square"></i>
     <% end %>
     <%= link_to task.title, task_path(task) %>
+    <%= link_to task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+
+        <i class="fas fa-trash-alt"></i>
+
+    <% end %>
   </div>
 <% end %>
+
+<hr>
+
+<%= link_to "Add a new task", tasks_new_path %>
+
