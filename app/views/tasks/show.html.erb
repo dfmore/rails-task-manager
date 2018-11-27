@@ -1,4 +1,4 @@
-<h1> <%= @task.title %></h1>
+<h1><%= @task.title %></h1>
 
 <div class="task-details p-3 mb-2 bg-info text-white">
   <%= @task.details %>
@@ -12,4 +12,9 @@
 
 <hr>
 
-<%= link_to "Back to list", tasks_path %>
+<div class="edit">
+  <%= link_to "Edit task", edit_path(@task) %>
+</div>
+<div class="back">
+  <%= link_to "Back to list", tasks_path %>
+</div>
